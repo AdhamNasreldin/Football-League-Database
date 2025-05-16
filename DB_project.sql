@@ -11,26 +11,28 @@ DROP TABLE IF EXISTS Person;
 
 -- Create Person table (parent entity)
 CREATE TABLE Person (
-    PersonID INT PRIMARY KEY AUTO_INCREMENT,
-    Name VARCHAR(100) NOT NULL,
+    SSN INT  NOT NULL ,
+    Name VARCHAR(50) NOT NULL,
     DoB DATE,
-    Gender VARCHAR(10)
+    Gender BIT , -- 0 for male 1 for female 
+     
+    PRIMARY key(SSN)
 );
 
 -- Create Team table
 CREATE TABLE Team (
     TeamID INT PRIMARY KEY AUTO_INCREMENT,
-    Name VARCHAR(100) NOT NULL,
+    Name VARCHAR(50) NOT NULL,
     Coach_Salary DECIMAL(10,2),
     CID INT NoT NULL,
-    FOREIGN KEY (CID) REFERENCES Person(PersonID)
+    FOREIGN KEY (CID) REFERENCES Person(SSN)
 );
 
 -- Create Judge table (subtype of Person)
 CREATE TABLE Judge (
     JudgeID INT PRIMARY KEY,
     Salary DECIMAL(10,2),
-    FOREIGN KEY (JudgeID) REFERENCES Person(PersonID)
+    FOREIGN KEY (JudgeID) REFERENCES Person(SSN)
 );
 
 -- Create Player table (subtype of Person)
@@ -39,8 +41,11 @@ CREATE TABLE Player (
     Height DECIMAL(5,2),
     Weight DECIMAL(5,2),
     TeamID INT,
-    FOREIGN KEY (PlayerID) REFERENCES Person(PersonID),
+    FOREIGN KEY (PlayerID) REFERENCES Person(SSN),
     FOREIGN KEY (TeamID) REFERENCES Team(TeamID)
+
+    on update cascade , 
+    on delete cascade 
 );
 
 -- Create Supporter table
@@ -58,22 +63,27 @@ CREATE TABLE Stadium (
 );
 
 -- Create Match table
-CREATE TABLE Matches (
+CREATE TABLE Match (
     MatchID INT PRIMARY KEY AUTO_INCREMENT,
     Date DATE,
     Sname VARCHAR(100),
     JudgeID INT,
+    Home INT Not NULL, 
+    Away Int Not NULL, 
+    Winning INT , -- NULL m3naha el match 5ls ta3adol 
+    FOREIGN Key (Home) REFERENCES (TeamID)
+    FOREIGN Key (Away) REFERENCES (TeamID)
     FOREIGN KEY (Sname) REFERENCES Stadium(Sname),
     FOREIGN KEY (JudgeID) REFERENCES Judge(JudgeID)
 );
 
--- Create Play table (relationship between Team and Match)
-CREATE TABLE Play (
-    TeamID INT,
+-- Create Score Table
+CREATE TABLE Score (
     MatchID INT,
-    PRIMARY KEY (TeamID, MatchID),
-    FOREIGN KEY (TeamID) REFERENCES Team(TeamID),
-    FOREIGN KEY (MatchID) REFERENCES Matches(MatchID)
+    PlayerID INT
+    Time INT, 
+    FOREIGN Key (MatchID) REFERENCES (MatchID)
+    FOREIGN Key (PlayerID) REFERENCES (PlayerID)
 );
 
 -- Create Attends table (relationship between Supporter and Match)
