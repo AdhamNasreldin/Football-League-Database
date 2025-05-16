@@ -1,0 +1,64 @@
+# SQL Project .gitignore
+
+# Exclude VS Code specific files
+.vscode/*
+*.code-workspace
+
+# SQL Tools extension generated files
+*.session.sql
+*.scratch.sql
+*.sql-editor-log
+*.local.sql
+
+# Other IDE specific files
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+
+# SQLTools
+.sqltool.json
+
+# Database files and backups
+*.bak
+*.old
+*.backup
+*.dump
+*.dmp
+
+# Logs
+logs/
+*.log
+
+# OS specific files
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
