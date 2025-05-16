@@ -69,6 +69,16 @@ INSERT INTO Person VALUES (1017, 'Alexander Hall', '1978-09-14', 0);
 INSERT INTO Person VALUES (1018, 'Mia King', '1993-01-27', 1);
 INSERT INTO Person VALUES (1019, 'Christopher Wright', '1974-04-06', 0);
 INSERT INTO Person VALUES (1020, 'Abigail Scott', '1991-08-19', 1);
+INSERT INTO Person VALUES (1057, 'Olivia Martinez', '1995-02-10', 1);
+INSERT INTO Person VALUES (1058, 'Ethan Garcia', '1988-07-22', 0);
+INSERT INTO Person VALUES (1059, 'Sophia Rodriguez', '1992-11-05', 1);
+INSERT INTO Person VALUES (1060, 'Noah Williams', '1985-04-18', 0);
+INSERT INTO Person VALUES (1061, 'Isabella Brown', '1998-09-30', 1);
+INSERT INTO Person VALUES (1062, 'James Jones', '1979-12-12', 0);
+INSERT INTO Person VALUES (1063, 'Ava Davis', '1990-06-25', 1);
+INSERT INTO Person VALUES (1064, 'Logan Miller', '1983-03-08', 0);
+INSERT INTO Person VALUES (1065, 'Charlotte Wilson', '1996-01-15', 1);
+INSERT INTO Person VALUES (1066, 'Benjamin Moore', '1980-10-20', 0);
 
 -- Team records (with coaches from Person table)
 INSERT INTO Team (Name, Coach_Salary, CID) VALUES ('Red Dragons', 120000.00, 1003);
@@ -140,6 +150,16 @@ INSERT INTO Supporter VALUES (1017, 2);
 INSERT INTO Supporter VALUES (1018, 3);
 INSERT INTO Supporter VALUES (1019, 4);
 INSERT INTO Supporter VALUES (1020, 1);
+INSERT INTO Supporter VALUES (1057, 2);
+INSERT INTO Supporter VALUES (1058, 3);
+INSERT INTO Supporter VALUES (1059, 4);
+INSERT INTO Supporter VALUES (1060, 1);
+INSERT INTO Supporter VALUES (1061, 2);
+INSERT INTO Supporter VALUES (1062, 3);
+INSERT INTO Supporter VALUES (1063, 4);
+INSERT INTO Supporter VALUES (1064, 1);
+INSERT INTO Supporter VALUES (1065, 2);
+INSERT INTO Supporter VALUES (1066, 3);
 
 -- Stadium records
 INSERT INTO Stadium (Sname, Location, Capacity) VALUES ('Victory Arena', 'New York', 75000);
@@ -160,6 +180,24 @@ VALUES ('2024-09-22', 3, 1011, 1, 3, NULL);
 INSERT INTO Matches (MDate, SID, JudgeID, HomeTeam, AwayTeam, Winner) 
 VALUES ('2024-09-29', 4, 1001, 2, 4, 2);
 
+INSERT INTO Matches (MDate, SID, JudgeID, HomeTeam, AwayTeam, Winner) 
+VALUES ('2024-10-05', 1, 1005, 4, 1, 4); -- MatchID 5
+
+INSERT INTO Matches (MDate, SID, JudgeID, HomeTeam, AwayTeam, Winner) 
+VALUES ('2024-10-12', 2, 1011, 2, 3, 3); -- MatchID 6
+
+INSERT INTO Matches (MDate, SID, JudgeID, HomeTeam, AwayTeam, Winner) 
+VALUES ('2024-10-19', 3, 1001, 1, 4, 1); -- MatchID 7
+
+INSERT INTO Matches (MDate, SID, JudgeID, HomeTeam, AwayTeam, Winner) 
+VALUES ('2024-10-26', 4, 1005, 3, 2, NULL); -- MatchID 8
+
+INSERT INTO Matches (MDate, SID, JudgeID, HomeTeam, AwayTeam, Winner) 
+VALUES ('2024-11-02', 1, 1011, 2, 1, 2); -- MatchID 9
+
+INSERT INTO Matches (MDate, SID, JudgeID, HomeTeam, AwayTeam, Winner) 
+VALUES ('2024-11-09', 2, 1001, 4, 3, 4); -- MatchID 10
+
 -- Score records
 INSERT INTO Score VALUES (1, 1002, 1004, 23, 15);
 INSERT INTO Score VALUES (1, 1002, NULL, 67, 42);
@@ -170,6 +208,34 @@ INSERT INTO Score VALUES (3, 1010, 1012, 45, 22);
 INSERT INTO Score VALUES (4, 1006, 1008, 56, 48);
 INSERT INTO Score VALUES (4, 1006, NULL, 89, 33);
 
+-- MatchID 5 (Yellow Tigers vs Red Dragons, Winner: Yellow Tigers)
+INSERT INTO Score VALUES (5, 1014, 1016, 15, 50); -- Yellow Tigers score
+INSERT INTO Score VALUES (5, 1048, NULL, 55, 12);   -- Yellow Tigers score
+INSERT INTO Score VALUES (5, 1004, 1002, 70, 5);    -- Red Dragons score
+
+-- MatchID 6 (Blue Eagles vs Green Lions, Winner: Green Lions)
+INSERT INTO Score VALUES (6, 1010, 1012, 22, 18); -- Green Lions score
+INSERT INTO Score VALUES (6, 1039, NULL, 60, 30);   -- Green Lions score
+INSERT INTO Score VALUES (6, 1006, 1008, 80, 55); -- Blue Eagles score
+
+-- MatchID 7 (Red Dragons vs Yellow Tigers, Winner: Red Dragons)
+INSERT INTO Score VALUES (7, 1002, 1004, 30, 0);    -- Red Dragons score
+INSERT INTO Score VALUES (7, 1021, NULL, 75, 20);   -- Red Dragons score
+
+-- MatchID 8 (Green Lions vs Blue Eagles, Winner: NULL - Draw)
+INSERT INTO Score VALUES (8, 1012, 1010, 40, 10); -- Green Lions score
+INSERT INTO Score VALUES (8, 1008, 1006, 42, 5);  -- Blue Eagles score
+
+-- MatchID 9 (Blue Eagles vs Red Dragons, Winner: Blue Eagles)
+INSERT INTO Score VALUES (9, 1006, 1008, 10, 5);    -- Blue Eagles score
+INSERT INTO Score VALUES (9, 1030, NULL, 25, 15);   -- Blue Eagles score
+INSERT INTO Score VALUES (9, 1031, 1006, 85, 0);    -- Blue Eagles score
+INSERT INTO Score VALUES (9, 1002, 1004, 50, 30);   -- Red Dragons score
+
+-- MatchID 10 (Yellow Tigers vs Green Lions, Winner: Yellow Tigers)
+INSERT INTO Score VALUES (10, 1014, 1016, 5, 58);   -- Yellow Tigers score
+INSERT INTO Score VALUES (10, 1049, NULL, 88, 14);  -- Yellow Tigers score
+
 -- Attends records
 INSERT INTO Attends VALUES (1015, 1);
 INSERT INTO Attends VALUES (1017, 1);
@@ -179,3 +245,21 @@ INSERT INTO Attends VALUES (1020, 3);
 INSERT INTO Attends VALUES (1015, 3);
 INSERT INTO Attends VALUES (1017, 4);
 INSERT INTO Attends VALUES (1019, 4);
+INSERT INTO Attends VALUES (1057, 5);
+INSERT INTO Attends VALUES (1060, 5);
+INSERT INTO Attends VALUES (1058, 6);
+INSERT INTO Attends VALUES (1061, 6);
+INSERT INTO Attends VALUES (1064, 7);
+INSERT INTO Attends VALUES (1020, 7);
+INSERT INTO Attends VALUES (1062, 8);
+INSERT INTO Attends VALUES (1065, 8);
+INSERT INTO Attends VALUES (1017, 9);
+INSERT INTO Attends VALUES (1060, 9);
+INSERT INTO Attends VALUES (1059, 10);
+INSERT INTO Attends VALUES (1066, 10);
+INSERT INTO Attends VALUES (1015, 5);
+INSERT INTO Attends VALUES (1018, 6);
+INSERT INTO Attends VALUES (1019, 7);
+INSERT INTO Attends VALUES (1057, 8);
+INSERT INTO Attends VALUES (1058, 9);
+INSERT INTO Attends VALUES (1063, 10);
