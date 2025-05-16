@@ -20,12 +20,12 @@ CREATE TABLE Person (
 );
 -- Create Team table
 CREATE TABLE Team (
-    TeamID INT AUTO_INCREMENT,
+    TeamID INT IDENTITY(1,1),
     Name VARCHAR(50) NOT NULL,
     Coach_Salary DECIMAL(10, 2),
-    CID INT NoT NULL,
+    CID INT NOT NULL,
     FOREIGN KEY (CID) REFERENCES Person(SSN),
-	PRIMARY KEY(TeamID)
+    PRIMARY KEY(TeamID)
 );
 -- Create Judge table (subtype of Person)
 CREATE TABLE Judge (
@@ -39,9 +39,10 @@ CREATE TABLE Player (
     Height DECIMAL(5, 2),
     Weight DECIMAL(5, 2),
     TeamID INT,
+    Salary DECIMAL(10, 2),
     FOREIGN KEY (PlayerID) REFERENCES Person(SSN),
     FOREIGN KEY (TeamID) REFERENCES Team(TeamID)
-	    ON UPDATE CASCADE
+        ON UPDATE CASCADE
         ON DELETE SET NULL
 );
 -- Create Supporter table
@@ -53,29 +54,26 @@ CREATE TABLE Supporter (
 );
 -- Create Stadium table
 CREATE TABLE Stadium (
-    SID INT PRIMARY KEY AUTO_INCREMENT,
+    SID INT IDENTITY(1,1) PRIMARY KEY,
     Sname VARCHAR(100) NOT NULL,
     Location VARCHAR(200),
     Capacity INT NOT NULL
 );
 -- Create Match table
 CREATE TABLE Matches (
-    MatchID INT PRIMARY KEY AUTO_INCREMENT,
+    MatchID INT IDENTITY(1,1) PRIMARY KEY,
     MDate DATE,
-	SID INT,
+    SID INT,
     JudgeID INT,
     HomeTeam INT NOT NULL,
     AwayTeam INT NOT NULL,
     Winner INT,
-    -- NULL Means Draw
     FOREIGN Key (HomeTeam) REFERENCES Team(TeamID), 
-	FOREIGN Key (AwayTeam) REFERENCES Team(TeamID), 
-	FOREIGN KEY (SID) REFERENCES Stadium(SID),
+    FOREIGN Key (AwayTeam) REFERENCES Team(TeamID), 
+    FOREIGN KEY (SID) REFERENCES Stadium(SID),
     FOREIGN KEY (JudgeID) REFERENCES Judge(JudgeID),
     FOREIGN KEY (Winner) REFERENCES Team(TeamID),
-    CHECK (
-        HomeTeam != AwayTeam
-    )
+    CHECK (HomeTeam != AwayTeam)
 );
 -- Create Score Table
 CREATE TABLE Score (
