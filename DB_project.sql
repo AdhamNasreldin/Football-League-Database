@@ -73,10 +73,18 @@ CREATE TABLE Score (
     MatchID INT,
     ScorerID INT,
     AsisterID INT,
-    GoalTime TIME,
-    PRIMARY KEY (MatchID, ScorerID, GoalTime),
-    FOREIGN Key (MatchID) REFERENCES (MatchID),
-    FOREIGN Key (PlayerID) REFERENCES (PlayerID)
+    GoalMin INT CHECK (
+        GoalMin >= 0
+        AND GoalMin <= 150
+    ),
+    GoalSec INT CHECK (
+        GoalSec >= 0
+        AND GoalSec <= 60
+    ),
+    PRIMARY KEY (MatchID, ScorerID, GoalMin, GoalSec),
+    FOREIGN Key (MatchID) REFERENCES Match(MatchID),
+    FOREIGN KEY (ScorerID) REFERENCES Player(PlayerID),
+    FOREIGN KEY (AsisterID) REFERENCES Player(PlayerID)
 );
 -- Create Attends table (relationship between Supporter and Match)
 CREATE TABLE Attends (
