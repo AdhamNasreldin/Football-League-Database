@@ -199,6 +199,9 @@ VALUES ('2024-11-02', 1, 1011, 2, 1, 2); -- MatchID 9
 INSERT INTO Matches (MDate, SID, JudgeID, HomeTeam, AwayTeam, Winner) 
 VALUES ('2024-11-09', 2, 1001, 4, 3, 4); -- MatchID 10
 
+INSERT INTO Matches (MDate, SID, JudgeID, HomeTeam, AwayTeam, Winner) 
+VALUES ('2024-11-10', 2, 1001, 4, 3, 4); -- MatchID 11
+
 -- Score records
 INSERT INTO Score VALUES (1, 1002, 1004, 23, 15);
 INSERT INTO Score VALUES (1, 1002, NULL, 67, 42);
