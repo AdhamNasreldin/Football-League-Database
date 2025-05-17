@@ -11,8 +11,8 @@ INSERT INTO Person VALUES (1009, 'Robert Thomas', '1977-08-05', 0);
 INSERT INTO Person VALUES (1013, 'Daniel Lewis', '1976-07-17', 0);
 
 -- Players (all male)
--- Red Dragons (Team 1) Players
-INSERT INTO Person VALUES (1002, 'Kevin Johnson', '1985-09-20', 0);
+-- Liverpool (Team 1) Players
+INSERT INTO Person VALUES (1002, 'Mohamed Salah', '1985-09-20', 0);
 INSERT INTO Person VALUES (1004, 'Mark Davis', '1988-11-25', 0);
 INSERT INTO Person VALUES (1021, 'Eric Moore', '1991-03-12', 0);
 INSERT INTO Person VALUES (1022, 'Steven Wright', '1989-07-28', 0);
@@ -24,7 +24,7 @@ INSERT INTO Person VALUES (1027, 'George Hill', '1992-06-14', 0);
 INSERT INTO Person VALUES (1028, 'Samuel Baker', '1990-01-22', 0);
 INSERT INTO Person VALUES (1029, 'Luke Evans', '1991-10-17', 0);
 
--- Blue Eagles (Team 2) Players
+-- Al-Ahly (Team 2) Players
 INSERT INTO Person VALUES (1006, 'Paul Taylor', '1990-01-18', 0);
 INSERT INTO Person VALUES (1008, 'Thomas Martinez', '1984-04-12', 0);
 INSERT INTO Person VALUES (1030, 'Anthony White', '1989-09-05', 0);
@@ -37,7 +37,7 @@ INSERT INTO Person VALUES (1036, 'Ryan Collins', '1989-11-21', 0);
 INSERT INTO Person VALUES (1037, 'Gary Stewart', '1990-07-09', 0);
 INSERT INTO Person VALUES (1038, 'Sean Morris', '1992-02-28', 0);
 
--- Green Lions (Team 3) Players
+-- Barcelona (Team 3) Players
 INSERT INTO Person VALUES (1010, 'Ryan Harris', '1986-12-15', 0);
 INSERT INTO Person VALUES (1012, 'Jason Rodriguez', '1992-10-08', 0);
 INSERT INTO Person VALUES (1039, 'Ian Parker', '1990-06-18', 0);
@@ -50,11 +50,11 @@ INSERT INTO Person VALUES (1045, 'Zachary Powell', '1990-10-15', 0);
 INSERT INTO Person VALUES (1046, 'Kyle Jenkins', '1993-05-08', 0);
 INSERT INTO Person VALUES (1047, 'Tyler Reed', '1991-08-22', 0);
 
--- Yellow Tigers (Team 4) Players
-INSERT INTO Person VALUES (1014, 'Chris Walker', '1989-03-23', 0);
+-- Zamalek (Team 4) Players
+INSERT INTO Person VALUES (1014, 'Shikabala', '1989-03-23', 0);
 INSERT INTO Person VALUES (1016, 'Brian Young', '1987-05-31', 0);
 INSERT INTO Person VALUES (1048, 'Marcus Gray', '1991-09-19', 0);
-INSERT INTO Person VALUES (1049, 'Calvin Hughes', '1988-02-25', 0);
+INSERT INTO Person VALUES (1049, 'Hazem Emam', '1988-02-25', 0);
 INSERT INTO Person VALUES (1050, 'Warren Price', '1990-11-13', 0);
 INSERT INTO Person VALUES (1051, 'Spencer Watson', '1992-04-07', 0);
 INSERT INTO Person VALUES (1052, 'Oscar Brooks', '1989-07-30', 0);
@@ -81,10 +81,10 @@ INSERT INTO Person VALUES (1065, 'Charlotte Wilson', '1996-01-15', 1);
 INSERT INTO Person VALUES (1066, 'Benjamin Moore', '1980-10-20', 0);
 
 -- Team records (with coaches from Person table)
-INSERT INTO Team (Name, Coach_Salary, CID) VALUES ('Red Dragons', 120000.00, 1003);
-INSERT INTO Team (Name, Coach_Salary, CID) VALUES ('Blue Eagles', 110000.00, 1007);
-INSERT INTO Team (Name, Coach_Salary, CID) VALUES ('Green Lions', 125000.00, 1009);
-INSERT INTO Team (Name, Coach_Salary, CID) VALUES ('Yellow Tigers', 105000.00, 1013);
+INSERT INTO Team (Name, Coach_Salary, CID) VALUES ('Liverpool', 120000.00, 1003);
+INSERT INTO Team (Name, Coach_Salary, CID) VALUES ('Al-Ahly', 110000.00, 1007);
+INSERT INTO Team (Name, Coach_Salary, CID) VALUES ('Barcelona', 125000.00, 1009);
+INSERT INTO Team (Name, Coach_Salary, CID) VALUES ('Zamalek', 105000.00, 1013);
 
 -- Judge records
 INSERT INTO Judge VALUES (1001, 85000.00);
@@ -92,8 +92,8 @@ INSERT INTO Judge VALUES (1005, 90000.00);
 INSERT INTO Judge VALUES (1011, 88000.00);
 
 -- Player records
--- Red Dragons players
--- Red Dragons players with salaries in INSERT statements
+-- Liverpool players
+-- Liverpool players with salaries in INSERT statements
 INSERT INTO Player VALUES (1002, 175.5, 68.2, 1, 85000.00);
 INSERT INTO Player VALUES (1004, 168.3, 62.7, 1, 82000.00);
 INSERT INTO Player VALUES (1021, 188.5, 82.4, 1, 92000.00);
@@ -106,7 +106,7 @@ INSERT INTO Player VALUES (1027, 181.5, 76.8, 1, 89000.00);
 INSERT INTO Player VALUES (1028, 177.2, 73.5, 1, 85000.00);
 INSERT INTO Player VALUES (1029, 183.8, 81.3, 1, 91000.00);
 
--- Blue Eagles players with salaries in INSERT statements
+-- Al-Ahly players with salaries in INSERT statements
 INSERT INTO Player VALUES (1006, 182.1, 75.5, 2, 95000.00);
 INSERT INTO Player VALUES (1008, 170.8, 65.3, 2, 83000.00);
 INSERT INTO Player VALUES (1030, 185.4, 78.9, 2, 92000.00);
@@ -119,7 +119,7 @@ INSERT INTO Player VALUES (1036, 181.2, 77.5, 2, 89000.00);
 INSERT INTO Player VALUES (1037, 177.9, 74.1, 2, 87000.00);
 INSERT INTO Player VALUES (1038, 186.7, 82.3, 2, 93000.00);
 
--- Green Lions players with salaries in INSERT statements
+-- Barcelona players with salaries in INSERT statements
 INSERT INTO Player VALUES (1010, 178.6, 72.9, 3, 88000.00);
 INSERT INTO Player VALUES (1012, 165.4, 60.1, 3, 82000.00);
 INSERT INTO Player VALUES (1039, 179.2, 75.0, 3, 89000.00);
@@ -132,7 +132,7 @@ INSERT INTO Player VALUES (1045, 187.3, 83.5, 3, 96000.00);
 INSERT INTO Player VALUES (1046, 183.0, 79.9, 3, 92000.00);
 INSERT INTO Player VALUES (1047, 176.2, 72.1, 3, 86000.00);
 
--- Yellow Tigers players with salaries in INSERT statements
+-- Zamalek players with salaries in INSERT statements
 INSERT INTO Player VALUES (1014, 180.2, 74.8, 4, 90000.00);
 INSERT INTO Player VALUES (1016, 172.7, 67.5, 4, 84000.00);
 INSERT INTO Player VALUES (1048, 184.7, 80.3, 4, 93000.00);
@@ -163,10 +163,10 @@ INSERT INTO Supporter VALUES (1065, 2);
 INSERT INTO Supporter VALUES (1066, 3);
 
 -- Stadium records
-INSERT INTO Stadium (Sname, Location, Capacity) VALUES ('Victory Arena', 'New York', 75000);
-INSERT INTO Stadium (Sname, Location, Capacity) VALUES ('Champions Field', 'Los Angeles', 68000);
-INSERT INTO Stadium (Sname, Location, Capacity) VALUES ('Golden Stadium', 'Chicago', 62000);
-INSERT INTO Stadium (Sname, Location, Capacity) VALUES ('Silver Dome', 'Houston', 70000);
+INSERT INTO Stadium (Sname, Location, Capacity) VALUES ('Allianz Arena', 'New York', 75000);
+INSERT INTO Stadium (Sname, Location, Capacity) VALUES ('Borg el ARAB STadium', 'Alexandria', 68000);
+INSERT INTO Stadium (Sname, Location, Capacity) VALUES ('Cairo Stadium', 'Cairo', 62000);
+INSERT INTO Stadium (Sname, Location, Capacity) VALUES ('Camp Nou', 'Barcelona', 70000);
 
 -- Matches records
 INSERT INTO Matches (MDate, SID, JudgeID, HomeTeam, AwayTeam, Winner) 
@@ -212,33 +212,33 @@ INSERT INTO Score VALUES (3, 1010, 1012, 45, 22);
 INSERT INTO Score VALUES (4, 1006, 1008, 56, 48);
 INSERT INTO Score VALUES (4, 1006, NULL, 89, 33);
 
--- MatchID 5 (Yellow Tigers vs Red Dragons, Winner: Yellow Tigers)
-INSERT INTO Score VALUES (5, 1014, 1016, 15, 50); -- Yellow Tigers score
-INSERT INTO Score VALUES (5, 1048, NULL, 55, 12);   -- Yellow Tigers score
-INSERT INTO Score VALUES (5, 1004, 1002, 70, 5);    -- Red Dragons score
+-- MatchID 5 (Zamalek vs Liverpool, Winner: Zamalek)
+INSERT INTO Score VALUES (5, 1014, 1016, 15, 50); -- Zamalek score
+INSERT INTO Score VALUES (5, 1048, NULL, 55, 12);   -- Zamalek score
+INSERT INTO Score VALUES (5, 1004, 1002, 70, 5);    -- Liverpool score
 
--- MatchID 6 (Blue Eagles vs Green Lions, Winner: Green Lions)
-INSERT INTO Score VALUES (6, 1010, 1012, 22, 18); -- Green Lions score
-INSERT INTO Score VALUES (6, 1039, NULL, 60, 30);   -- Green Lions score
-INSERT INTO Score VALUES (6, 1006, 1008, 80, 55); -- Blue Eagles score
+-- MatchID 6 (Al-Ahly vs Barcelona, Winner: Barcelona)
+INSERT INTO Score VALUES (6, 1010, 1012, 22, 18); -- Barcelona score
+INSERT INTO Score VALUES (6, 1039, NULL, 60, 30);   -- Barcelona score
+INSERT INTO Score VALUES (6, 1006, 1008, 80, 55); -- Al-Ahly score
 
--- MatchID 7 (Red Dragons vs Yellow Tigers, Winner: Red Dragons)
-INSERT INTO Score VALUES (7, 1002, 1004, 30, 0);    -- Red Dragons score
-INSERT INTO Score VALUES (7, 1021, NULL, 75, 20);   -- Red Dragons score
+-- MatchID 7 (Liverpool vs Zamalek, Winner: Liverpool)
+INSERT INTO Score VALUES (7, 1002, 1004, 30, 0);    -- Liverpool score
+INSERT INTO Score VALUES (7, 1021, NULL, 75, 20);   -- Liverpool score
 
--- MatchID 8 (Green Lions vs Blue Eagles, Winner: NULL - Draw)
-INSERT INTO Score VALUES (8, 1012, 1010, 40, 10); -- Green Lions score
-INSERT INTO Score VALUES (8, 1008, 1006, 42, 5);  -- Blue Eagles score
+-- MatchID 8 (Barcelona vs Al-Ahly, Winner: NULL - Draw)
+INSERT INTO Score VALUES (8, 1012, 1010, 40, 10); -- Barcelona score
+INSERT INTO Score VALUES (8, 1008, 1006, 42, 5);  -- Al-Ahly score
 
--- MatchID 9 (Blue Eagles vs Red Dragons, Winner: Blue Eagles)
-INSERT INTO Score VALUES (9, 1006, 1008, 10, 5);    -- Blue Eagles score
-INSERT INTO Score VALUES (9, 1030, NULL, 25, 15);   -- Blue Eagles score
-INSERT INTO Score VALUES (9, 1031, 1006, 85, 0);    -- Blue Eagles score
-INSERT INTO Score VALUES (9, 1002, 1004, 50, 30);   -- Red Dragons score
+-- MatchID 9 (Al-Ahly vs Liverpool, Winner: Al-Ahly)
+INSERT INTO Score VALUES (9, 1006, 1008, 10, 5);    -- Al-Ahly score
+INSERT INTO Score VALUES (9, 1030, NULL, 25, 15);   -- Al-Ahly score
+INSERT INTO Score VALUES (9, 1031, 1006, 85, 0);    -- Al-Ahly score
+INSERT INTO Score VALUES (9, 1002, 1004, 50, 30);   -- Liverpool score
 
--- MatchID 10 (Yellow Tigers vs Green Lions, Winner: Yellow Tigers)
-INSERT INTO Score VALUES (10, 1014, 1016, 5, 58);   -- Yellow Tigers score
-INSERT INTO Score VALUES (10, 1049, NULL, 88, 14);  -- Yellow Tigers score
+-- MatchID 10 (Zamalek vs Barcelona, Winner: Zamalek)
+INSERT INTO Score VALUES (10, 1014, 1016, 5, 58);   -- Zamalek score
+INSERT INTO Score VALUES (10, 1049, NULL, 88, 14);  -- Zamalek score
 
 -- Attends records
 INSERT INTO Attends VALUES (1015, 1);
