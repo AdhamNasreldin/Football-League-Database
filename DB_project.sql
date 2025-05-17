@@ -20,7 +20,7 @@ CREATE TABLE Person (
 );
 -- Create Team table
 CREATE TABLE Team (
-    TeamID INT IDENTITY(1,1),
+    TeamID INT AUTO_INCREMENT,
     Name VARCHAR(50) NOT NULL,
     Coach_Salary DECIMAL(10, 2),
     CID INT NOT NULL,
@@ -54,14 +54,14 @@ CREATE TABLE Supporter (
 );
 -- Create Stadium table
 CREATE TABLE Stadium (
-    SID INT IDENTITY(1,1) PRIMARY KEY,
+    SID INT AUTO_INCREMENT PRIMARY KEY,
     Sname VARCHAR(100) NOT NULL,
     Location VARCHAR(200),
     Capacity INT NOT NULL
 );
 -- Create Match table
 CREATE TABLE Matches (
-    MatchID INT IDENTITY(1,1) PRIMARY KEY,
+    MatchID INT AUTO_INCREMENT PRIMARY KEY,
     MDate DATE,
     SID INT,
     JudgeID INT,

@@ -1,16 +1,16 @@
 -- Query to find the stadium that hosted the most matches
-SELECT 
-    s.SID,
-    s.Sname AS StadiumName,
-    s.Location,
-    s.Capacity,
-    COUNT(m.MatchID) AS MatchesHosted
-FROM 
-    Stadium s
-LEFT JOIN 
-    Matches m ON s.SID = m.SID
-GROUP BY 
-    s.SID, s.Sname, s.Location, s.Capacity
-ORDER BY 
+SELECT
+    Stadium.SID,
+    Stadium.Sname AS StadiumName,
+    Stadium.Location,
+    Stadium.Capacity,
+    COUNT(Matches.MatchID) AS MatchesHosted
+FROM
+    Stadium
+LEFT OUTER JOIN
+    Matches ON Stadium.SID = Matches.SID
+GROUP BY
+    Stadium.SID, Stadium.Sname, Stadium.Location, Stadium.Capacity
+ORDER BY
     MatchesHosted DESC
 LIMIT 1;
